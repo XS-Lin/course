@@ -30,12 +30,12 @@ class Scr():
         pd.set_option("display.colheader_justify", "center")
 
         df = web.DataReader(symbol,'yahoo', start, end)
-        mydata = pd.DataFrame(df)
+        df.columns=['Adj Close','Close','High','Low','Open','Volume']
 
 
         self.frame_content = ttk.Frame(frame_text, height=1000, width=1000)
         self.frame_content.pack(padx=20, pady=10)
-        ttk.Label(self.frame_content, text=mydata, foreground='', font=('Arial', 12, 'bold')).grid(row=0, column=0, padx=10,
+        ttk.Label(self.frame_content, text=dt, foreground='', font=('Arial', 12, 'bold')).grid(row=0, column=0, padx=10,
                                                                                               sticky='sw')
 
 
